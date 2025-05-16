@@ -16,7 +16,7 @@ const Navbar = () => {
 
                 <button onClick={() => setIsOpen(!isOpen)}>
                     <FaBars size={24}
-                        className='md:hidden'
+                        className="md:hidden text-gray-800"
                     />
                 </button>
 
