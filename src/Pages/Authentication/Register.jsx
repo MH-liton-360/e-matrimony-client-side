@@ -1,13 +1,49 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
+    const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
+    const [error, setError] = useState({});
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Registration logic here
-    };
+
+        const form = new FormData(e.target);
+
+        const name = form.get("name");
+        if (name.length < 5) {
+            setError({ ...error, name: "must be more then five characters long" });
+            return;
+        }
+        const photo = form.get("photo");
+        const email = form.get("email");
+        const password = form.get("password");
+
+        //console.log({ name, photo, email, password });
+
+        createNewUser(email, password)
+            .then((res) => {
+                const user = res.user;
+                setUser(user);
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        navigate("/");
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage);
+            });
+    }
 
     return (
-        <div className="lg:p-12">
+        <div className="mt-16 lg:p-10">
             <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 sm:px-6 lg:px-8">
                 <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
                     <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
@@ -20,10 +56,18 @@ const Register = () => {
                             </label>
                             <input
                                 type="text"
+                                name="name"
                                 required
                                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 placeholder="Your full name"
                             />
+                            {
+                                error.name && (
+                                    <label className="label text-sm text-red-500">
+                                        {error.name}
+                                    </label>
+                                )
+                            }
                         </div>
 
                         <div>
@@ -32,6 +76,7 @@ const Register = () => {
                             </label>
                             <input
                                 type="url"
+                                name="photo"
                                 required
                                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 placeholder="Link to your profile photo"
@@ -44,6 +89,7 @@ const Register = () => {
                             </label>
                             <input
                                 type="email"
+                                name="email"
                                 required
                                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 placeholder="Email"
@@ -56,6 +102,7 @@ const Register = () => {
                             </label>
                             <input
                                 type="password"
+                                name="password"
                                 required
                                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 placeholder="Create a strong password"

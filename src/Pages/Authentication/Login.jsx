@@ -1,11 +1,34 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
+
+    const { userLogin, setUser } = useContext(AuthContext);
+
+    const [error, setError] = useState({});
+    const location = useLocation();
+    const Navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Registration logic here
-    };
 
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        //console.log({ email, password });
+
+        userLogin(email, password)
+            .then((res) => {
+                const user = res.user;
+                setUser(user);
+                Navigate(location?.state ? location.state : "/");
+            })
+            .catch((err) => {
+                setError({ ...error, login: err.code })
+            });
+    }
     return (
         <div className="lg:p-20">
             <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 sm:px-6 lg:px-8">
@@ -20,6 +43,7 @@ const Login = () => {
                             </label>
                             <input
                                 type="email"
+                                name="email"
                                 required
                                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 placeholder="Email"
@@ -32,10 +56,18 @@ const Login = () => {
                             </label>
                             <input
                                 type="password"
+                                name="password"
                                 required
                                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 placeholder="Create a strong password"
                             />
+                            {
+                                error.login && (
+                                    <label className="label text-sm text-red-600">
+                                        {error.login}
+                                    </label>
+                                )
+                            }
                         </div>
 
                         <div className="flex items-center justify-between text-sm text-gray-600">

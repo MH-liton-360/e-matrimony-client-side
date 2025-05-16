@@ -1,14 +1,18 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import logo from '../../../../assets/matrimony-logo.jpg';
 import logoProfile from '../../../../assets/white-profile-icon-png-7.png';
+import { AuthContext } from '../../../../Provider/AuthProvider';
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <nav className="max-w-7xl mx-auto fixed top-0 left-0 right-0 z-50 bg-amber-50 bg-opacity-80 shadow-md p-4">
+
             <div className="flex justify-between items-center relative">
                 {/* Logo */}
                 <div>
@@ -28,8 +32,33 @@ const Navbar = () => {
                     <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-gray-800">
                         <FaBars size={24} />
                     </button>
-                    <img src={logoProfile} className="h-[40px] w-[40px] rounded-full" alt="Profile" />
-                    <Link to='/auth/login' className="w-full sm:w-auto bg-emerald-900 hover:bg-blue-600 text-white py-2 px-6 rounded-lg font-medium">Login</Link>
+                    {
+                        user && user?.email ? (
+                            <>
+                                <div>
+                                    <img className="w-12 h-11 rounded-2xl" src={user.photoURL} alt="User Profile" />
+                                    {/* <p>{user.displayName}</p> */}
+                                </div>
+                                <button
+                                    onClick={logOut}
+                                    className="w-full sm:w-auto bg-emerald-900 hover:bg-blue-600 text-white py-2 px-6 rounded-lg font-medium"
+                                >
+                                    Logout
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <img className="h-[50px]" src={logoProfile} alt="Default Profile" />
+                                <Link
+                                    to="/auth/login"
+                                    className="w-full sm:w-auto bg-emerald-900 hover:bg-blue-600 text-white py-2 px-6 rounded-lg font-medium"
+                                >
+                                    Login
+                                </Link>
+                            </>
+                        )
+                    }
+
                 </div>
             </div>
 
