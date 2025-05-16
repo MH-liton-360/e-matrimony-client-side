@@ -6,6 +6,7 @@ import Authentication from "../Layouts/Authentication";
 import Login from "../Pages/Authentication/Login";
 import Dashboard from "../Components/Dashboard";
 import Register from "../Pages/Authentication/Register";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -18,8 +19,13 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'matrimony/:id',
-                element: <MatrimonyDetails></MatrimonyDetails>,
+                element: (
+                    <PrivateRoute>
+                        <MatrimonyDetails></MatrimonyDetails>,
+                    </PrivateRoute>
+                ),
                 loader: () => fetch('/Matrimony.json'),
+                errorElement: <Error />,
 
             },
             {
