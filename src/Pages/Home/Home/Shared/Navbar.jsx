@@ -20,7 +20,7 @@ const Navbar = () => {
                     <li><Link to="/" className="hover:text-blue-500">Home</Link></li>
                     <li><Link to="/about" className="hover:text-blue-500">About</Link></li>
                     <li><Link to="/services" className="hover:text-blue-500">Services</Link></li>
-                    <li><Link to="/contact" className="hover:text-blue-500">Contact</Link></li>
+                    <li><Link to="/dashboard" className="hover:text-blue-500">Dashboard</Link></li>
                 </ul>
 
                 {/* Right side: bars, profile, login */}
@@ -29,7 +29,7 @@ const Navbar = () => {
                         <FaBars size={24} />
                     </button>
                     <img src={logoProfile} className="h-[40px] w-[40px] rounded-full" alt="Profile" />
-                    <button className="w-full sm:w-auto bg-emerald-800 hover:bg-blue-600 text-white py-2 px-6 rounded-lg font-medium">Login</button>
+                    <Link to='/auth/login' className="w-full sm:w-auto bg-emerald-900 hover:bg-blue-600 text-white py-2 px-6 rounded-lg font-medium">Login</Link>
                 </div>
             </div>
 
@@ -39,7 +39,7 @@ const Navbar = () => {
                         <li><Link to="/" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Home</Link></li>
                         <li><Link to="/about" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>About</Link></li>
                         <li><Link to="/services" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Services</Link></li>
-                        <li><Link to="/contact" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Contact</Link></li>
+                        <li><Link to="/dashboard" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Dashboard</Link></li>
                     </ul>
                 )
             }
