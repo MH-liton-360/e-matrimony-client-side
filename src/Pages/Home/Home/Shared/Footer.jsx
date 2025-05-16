@@ -35,10 +35,10 @@ const Footer = () => {
                 <div>
                     <h3 className="font-bold text-lg mb-3">SOCIAL MEDIA</h3>
                     <div className="flex space-x-4">
+                        <a href="https://www.facebook.com/MH.liton.360"><FaFacebookF className="text-[#3b5998] text-xl" /></a>
+                        <a href="https://www.youtube.com/watch?v=kml52nRtX2M "><FaYoutube className="text-[#ff0000] text-xl" /></a>
                         <a href="#"><FaLinkedin className="text-[#0077b5] text-xl" /></a>
                         <a href="#"><FaTwitter className="text-[#1da1f2] text-xl" /></a>
-                        <a href="#"><FaFacebookF className="text-[#3b5998] text-xl" /></a>
-                        <a href="#"><FaYoutube className="text-[#ff0000] text-xl" /></a>
                     </div>
                 </div>
             </div>
