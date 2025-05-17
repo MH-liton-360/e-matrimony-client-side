@@ -4,9 +4,10 @@ import Home from "../Pages/Home/Home/Home";
 import MatrimonyDetails from "../Pages/Home/Matrimony/MatrimonyDetails";
 import Authentication from "../Layouts/Authentication";
 import Login from "../Pages/Authentication/Login";
-import Dashboard from "../Components/Dashboard";
 import Register from "../Pages/Authentication/Register";
 import PrivateRoute from "./PrivateRoute";
+import Biodatas from "../Components/Biodatas";
+import Dashboard from "../Components/Dashboard/Dashboard";
 
 export const router = createBrowserRouter([
     {
@@ -29,8 +30,18 @@ export const router = createBrowserRouter([
 
             },
             {
-                path: 'dashboard',
+                path: 'all-bio-data',
+                element: <Biodatas></Biodatas>,
+            },
+            {
+                path: 'dashboard/dashboard',
                 element: <Dashboard></Dashboard>,
+                children: [
+                    {
+                        path: 'dashboard/dashboard',
+                        element: <Dashboard></Dashboard>,
+                    }
+                ]
             }
         ]
     },

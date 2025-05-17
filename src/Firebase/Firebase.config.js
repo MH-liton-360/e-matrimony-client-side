@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA1MsSgX17kGcl0_a_xjKdPzaKot1Z9UuQ",
-  authDomain: "e-matrimony-cf61e.firebaseapp.com",
-  projectId: "e-matrimony-cf61e",
-  storageBucket: "e-matrimony-cf61e.firebasestorage.app",
-  messagingSenderId: "302410452176",
-  appId: "1:302410452176:web:884c80d9c351f0635222d5"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
