@@ -51,7 +51,7 @@ const Navbar = () => {
 
                     <li><Link to="/services" className="hover:text-blue-500">Services</Link></li>
 
-                    <li className="relative group">
+                    {/* <li className="relative group">
                         <button className="hover:text-blue-500">Dashboard</button>
                         <ul className="absolute hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-48 z-10">
                             <li><Link to="/dashboard/dashboard" className="block px-4 py-2 hover:bg-gray-100">Dashboard</Link></li>
@@ -61,7 +61,7 @@ const Navbar = () => {
                             <li><Link to="/dashboard/favourites" className="block px-4 py-2 hover:bg-gray-100">Favourites Biodata</Link></li>
                             <li><Link to="/logout" className="block px-4 py-2 hover:bg-gray-100 text-red-600">Logout</Link></li>
                         </ul>
-                    </li>
+                    </li> */}
                 </ul>
 
                 {/* Right side: bars, profile, login */}

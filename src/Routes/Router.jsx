@@ -6,9 +6,11 @@ import Authentication from "../Layouts/Authentication";
 import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";
 import PrivateRoute from "./PrivateRoute";
-import Dashboard from "../Components/Dashboard/Dashboard";
 import CreateBiodatas from "../Components/CreateBiodatas";
 import AllBiodatas from "../Components/AllBiodatas";
+import Dashboard from "../Layouts/Dashboard";
+import Error from "../Pages/Home/Home/Shared/Error";
+import DashboardHome from "../Components/Dashboard/DashboardHome";
 
 export const router = createBrowserRouter([
     {
@@ -40,18 +42,10 @@ export const router = createBrowserRouter([
                 path: 'all',
                 element: <AllBiodatas></AllBiodatas>,
             },
-            {
-                path: 'dashboard/dashboard',
-                element: <Dashboard></Dashboard>,
-                children: [
-                    {
-                        path: 'dashboard/dashboard',
-                        element: <Dashboard></Dashboard>,
-                    }
-                ]
-            }
         ]
     },
+
+    //Authentication
     {
         path: 'auth',
         element: <Authentication></Authentication>,
@@ -66,6 +60,21 @@ export const router = createBrowserRouter([
             },
         ]
     },
+
+
+    //Dashboard
+    {
+        path: 'dashboard',
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+                path: 'dashboard',
+                element: <DashboardHome></DashboardHome>,
+            },
+
+        ]
+    },
+
     {
         path: "*",
         element: <Error></Error>
