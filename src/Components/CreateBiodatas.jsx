@@ -1,4 +1,4 @@
-const Biodatas = () => {
+const CreateBiodatas = () => {
     return (
         <div className="mt-30 mb-8">
             <form className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-2xl space-y-4">
@@ -68,7 +68,7 @@ const Biodatas = () => {
 
                 <div className="text-center">
                     <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700 transition">
-                        View Profile
+                        Submit
                     </button>
                 </div>
             </form>
@@ -76,4 +76,4 @@ const Biodatas = () => {
     );
 };
 
-export default Biodatas;
+export default CreateBiodatas;

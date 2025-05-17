@@ -40,7 +40,15 @@ const Navbar = () => {
                 {/* Centered Desktop Menu */}
                 <ul className="hidden md:flex space-x-6 text-gray-700 absolute left-1/2 transform -translate-x-1/2">
                     <li><Link to="/" className="hover:text-blue-500">Home</Link></li>
-                    <li><Link to="/all-bio-data" className="hover:text-blue-500">Biodatas</Link></li>
+
+                    <li className="relative group">
+                        <button className="hover:text-blue-500">Biodatas</button>
+                        <ul className="absolute hidden group-hover:block bg-white shadow-lg rounded-md py-2 w-48 z-10">
+                            <li><Link to="/create" className="block px-4 py-2 hover:bg-gray-100">Create Biodatas</Link></li>
+                            <li><Link to="/all" className="block px-4 py-2 hover:bg-gray-100">All Biodatas</Link></li>
+                        </ul>
+                    </li>
+
                     <li><Link to="/services" className="hover:text-blue-500">Services</Link></li>
 
                     <li className="relative group">
@@ -116,9 +124,18 @@ const Navbar = () => {
                 isOpen && (
                     <ul className="flex flex-col mt-4 space-y-2 text-gray-700 md:hidden">
                         <li><Link to="/" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Home</Link></li>
-                        <li><Link to="/all-bio-data" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Biodatas</Link></li>
+
+                        {/* Biodatas with sub-links */}
+                        <li>
+                            <span className="font-medium">Biodatas</span>
+                            <ul className="ml-4 space-y-1">
+                                <li><Link to="/create" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Create Biodatas</Link></li>
+                                <li><Link to="/all" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>All Biodatas</Link></li>
+                            </ul>
+                        </li>
+
                         <li><Link to="/services" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Services</Link></li>
-                        <li><Link to="/dashboard" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Dashboard</Link></li>
+                        <li><Link to="/dashboard/dashboard" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Dashboard</Link></li>
                     </ul>
                 )
             }

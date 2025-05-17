@@ -6,8 +6,9 @@ import Authentication from "../Layouts/Authentication";
 import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";
 import PrivateRoute from "./PrivateRoute";
-import Biodatas from "../Components/Biodatas";
 import Dashboard from "../Components/Dashboard/Dashboard";
+import CreateBiodatas from "../Components/CreateBiodatas";
+import AllBiodatas from "../Components/AllBiodatas";
 
 export const router = createBrowserRouter([
     {
@@ -29,9 +30,15 @@ export const router = createBrowserRouter([
                 errorElement: <Error />,
 
             },
+
+            // Biodatas Route setup 
             {
-                path: 'all-bio-data',
-                element: <Biodatas></Biodatas>,
+                path: 'create',
+                element: <CreateBiodatas></CreateBiodatas>,
+            },
+            {
+                path: 'all',
+                element: <AllBiodatas></AllBiodatas>,
             },
             {
                 path: 'dashboard/dashboard',
