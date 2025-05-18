@@ -50,7 +50,7 @@ const AdminDSB = () => {
                 <StatCard title="Male Biodata" value={stats.male} bgColor="bg-green-600" />
                 <StatCard title="Female Biodata" value={stats.female} bgColor="bg-pink-500" />
                 <StatCard title="Premium Biodata" value={stats.premium} bgColor="bg-yellow-500" />
-                <StatCard title="Total Revenue" value={`৳ ${stats.revenue}`} bgColor="bg-purple-600" />
+                <StatCard title="Total Revenue" value={`${stats.revenue}`} bgColor="bg-purple-600" />
             </div>
         </div>
     );

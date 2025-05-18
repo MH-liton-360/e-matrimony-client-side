@@ -13,6 +13,7 @@ import Error from "../Pages/Home/Home/Shared/Error";
 import DashboardHome from "../Components/Dashboard/DashboardHome";
 import Editbiodata from "../Components/Dashboard/Editbiodata";
 import AdminDSB from "../Components/Dashboard/AdminDSB";
+import ManageUsers from "../Components/Dashboard/ManageUsers";
 
 
 export const router = createBrowserRouter([
@@ -81,6 +82,10 @@ export const router = createBrowserRouter([
             {
                 path: 'adminDashboard',
                 element: <AdminDSB></AdminDSB>,
+            },
+            {
+                path: 'manageUsers',
+                element: <ManageUsers></ManageUsers>,
             }
 
         ]
