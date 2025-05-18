@@ -45,7 +45,7 @@ const Dashboard = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='viewBiodata' className="flex items-center gap-2 hover:underline">
+                        <NavLink to='/all' className="flex items-center gap-2 hover:underline">
                             <Eye size={18} /> View Biodata
                         </NavLink>
                     </li>

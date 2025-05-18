@@ -11,6 +11,9 @@ import AllBiodatas from "../Components/AllBiodatas";
 import Dashboard from "../Layouts/Dashboard";
 import Error from "../Pages/Home/Home/Shared/Error";
 import DashboardHome from "../Components/Dashboard/DashboardHome";
+import Editbiodata from "../Components/Dashboard/Editbiodata";
+import AdminDSB from "../Components/Dashboard/AdminDSB";
+
 
 export const router = createBrowserRouter([
     {
@@ -71,6 +74,14 @@ export const router = createBrowserRouter([
                 path: 'dashboard',
                 element: <DashboardHome></DashboardHome>,
             },
+            {
+                path: 'editBiodata',
+                element: <Editbiodata></Editbiodata>,
+            },
+            {
+                path: 'adminDashboard',
+                element: <AdminDSB></AdminDSB>,
+            }
 
         ]
     },
