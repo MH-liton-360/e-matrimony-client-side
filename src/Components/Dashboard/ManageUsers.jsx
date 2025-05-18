@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const ManageUsers = () => {
     const [users, setUsers] = useState([]);
@@ -32,6 +33,9 @@ const ManageUsers = () => {
 
     return (
         <div className="p-6">
+            <Helmet>
+                <title>Manage Users</title>
+            </Helmet>
             <h2 className="text-2xl font-bold mb-4">Manage Users</h2>
 
             <input

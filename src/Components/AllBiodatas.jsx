@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 const AllBiodatas = () => {
     const [biodatas, setBiodatas] = useState([]);
@@ -20,6 +21,9 @@ const AllBiodatas = () => {
 
     return (
         <div className="mt-24">
+            <Helmet>
+                <title>E-Matrimony || All Biodata</title>
+            </Helmet>
             <div className="px-4 py-8 max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {biodatas.map((bio) => (

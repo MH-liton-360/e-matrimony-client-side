@@ -49,7 +49,7 @@ const Navbar = () => {
                         </ul>
                     </li>
 
-                    <li><Link to="/services" className="hover:text-blue-500">Services</Link></li>
+                    <li><Link to="/appointment" className="hover:text-blue-500">Appointment</Link></li>
 
                 </ul>
 
@@ -123,7 +123,7 @@ const Navbar = () => {
                             </ul>
                         </li>
 
-                        <li><Link to="/services" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Services</Link></li>
+                        <li><Link to="/appointment" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Appointment</Link></li>
                         <li><Link to="/dashboard/dashboard" className="hover:text-blue-500" onClick={() => setIsOpen(false)}>Dashboard</Link></li>
                     </ul>
                 )

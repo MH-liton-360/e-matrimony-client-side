@@ -1,12 +1,16 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { Pencil, Eye, Users, Heart, LogOut, ShieldCheck, UserCog, CheckCircle2, Inbox } from "lucide-react";
 import { FaHome, FaUserShield } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
     return (
         <div className="flex">
+            <Helmet>
+                <title>Dashboard</title>
+            </Helmet>
             <div className="w-64 min-h-screen bg-orange-500 text-white">
-                <h2 className="text-2xl font-bold p-4">Dashboard</h2>
+                <h2 className="text-2xl font-bold p-4">E-Matrimony</h2>
                 <ul className="menu p-4 space-y-2">
 
                     {/* --- Admin Section --- */}

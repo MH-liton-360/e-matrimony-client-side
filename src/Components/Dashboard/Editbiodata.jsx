@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Editbiodata = () => {
     const [email, setEmail] = useState('');
@@ -48,7 +49,9 @@ const Editbiodata = () => {
 
     return (
         <div>
-            <h1>Welcome bio</h1>
+            <Helmet>
+                <title>Edit Biodata</title>
+            </Helmet>
             <form onSubmit={handleSubmit} className="max-w-3xl mx-auto p-6 bg-white rounded shadow-md">
                 <fieldset>
                     <legend className="text-center text-3xl font-semibold mb-6 text-amber-900 bg-amber-50">Biodata Form</legend>

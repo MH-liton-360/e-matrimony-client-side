@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const MatrimonyDetails = () => {
@@ -10,6 +11,9 @@ const MatrimonyDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title> Details</title>
+            </Helmet>
             <div className="pt-30 px-4 py-6 sm:px-8 md:px-16 lg:px-24 xl:px-32">
                 <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
                     <img

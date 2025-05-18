@@ -18,8 +18,6 @@ const Footer = () => {
                     <p>Email: liton72524nkgmail.com</p>
                 </div>
 
-
-
                 <div>
                     <h3 className="font-bold text-lg mb-3">HELP & SUPPORT</h3>
                     <div>

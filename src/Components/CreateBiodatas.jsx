@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet-async";
+
 const CreateBiodatas = () => {
     return (
         <div className="mt-30 mb-8">
+            <Helmet>
+                <title>Create Biodata</title>
+            </Helmet>
             <form className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-2xl space-y-4">
                 <h1 className="text-center font-bold text-3xl bg-blue-100">Marital Biodatas Information</h1>
 

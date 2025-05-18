@@ -14,6 +14,7 @@ import DashboardHome from "../Components/Dashboard/DashboardHome";
 import Editbiodata from "../Components/Dashboard/Editbiodata";
 import AdminDSB from "../Components/Dashboard/AdminDSB";
 import ManageUsers from "../Components/Dashboard/ManageUsers";
+import Appointments from "../Components/Appointments";
 
 
 export const router = createBrowserRouter([
@@ -46,6 +47,12 @@ export const router = createBrowserRouter([
                 path: 'all',
                 element: <AllBiodatas></AllBiodatas>,
             },
+            {
+                path: 'appointment',
+                element: <Appointments></Appointments>,
+                loader: () => fetch('/Appointments.json'),
+                errorElement: <Error />,
+            },
         ]
     },
 
@@ -66,7 +73,7 @@ export const router = createBrowserRouter([
     },
 
 
-    //Dashboard
+    //Dashboard system
     {
         path: 'dashboard',
         element: <Dashboard></Dashboard>,

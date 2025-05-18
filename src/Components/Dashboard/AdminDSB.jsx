@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const AdminDSB = () => {
     const [stats, setStats] = useState({
@@ -44,6 +45,9 @@ const AdminDSB = () => {
 
     return (
         <div className="px-4 py-6">
+            <Helmet>
+                <title>Admin Dashboard</title>
+            </Helmet>
             <h2 className="text-3xl font-bold mb-6">Admin Dashboard Overview</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <StatCard title="Total Biodata" value={stats.total} bgColor="bg-blue-600" />
