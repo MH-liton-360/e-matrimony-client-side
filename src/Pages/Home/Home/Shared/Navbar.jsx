@@ -48,7 +48,9 @@ const Navbar = () => {
                             <li><Link to="/all" className="block px-4 py-2 hover:bg-gray-100">All Biodatas</Link></li>
                         </ul>
                     </li>
+
                     <li><Link to="/services" className="hover:text-blue-500">Services</Link></li>
+
                 </ul>
 
                 {/* Right side: bars, profile, login */}
