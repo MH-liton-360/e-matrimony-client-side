@@ -56,7 +56,7 @@ export const router = createBrowserRouter([
         ]
     },
 
-    //Authentication
+    //Authentication system
     {
         path: 'auth',
         element: <Authentication></Authentication>,
@@ -71,7 +71,6 @@ export const router = createBrowserRouter([
             },
         ]
     },
-
 
     //Dashboard system
     {
