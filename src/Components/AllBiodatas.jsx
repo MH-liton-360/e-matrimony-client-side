@@ -7,7 +7,7 @@ const AllBiodatas = () => {
     useEffect(() => {
         const fetchBiodatas = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/biodataCreatedCard');
+                const res = await axios.get('https://e-matrimony-server-side.vercel.app/biodataCreatedCard');
                 setBiodatas(res.data);
                 console.log("Fetched biodatas:", res.data);
             } catch (err) {
@@ -17,7 +17,6 @@ const AllBiodatas = () => {
 
         fetchBiodatas();
     }, []);
-
 
     return (
         <div className="mt-24">
